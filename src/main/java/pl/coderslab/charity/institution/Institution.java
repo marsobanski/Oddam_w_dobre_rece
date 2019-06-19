@@ -1,9 +1,12 @@
 package pl.coderslab.charity.institution;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import pl.coderslab.charity.donation.Donation;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Institution {
@@ -11,8 +14,12 @@ public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private String name;
+    @NotNull
     private String description;
+    @OneToMany(mappedBy = "institution")
+    private List<Donation> donations = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -36,5 +43,13 @@ public class Institution {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Donation> getDonations() {
+        return donations;
+    }
+
+    public void setDonations(List<Donation> donations) {
+        this.donations = donations;
     }
 }

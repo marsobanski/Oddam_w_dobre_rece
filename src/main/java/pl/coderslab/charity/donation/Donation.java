@@ -1,11 +1,13 @@
 package pl.coderslab.charity.donation;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.NumberFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -17,20 +19,30 @@ public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private Long quantity;
     @ManyToMany
+    @NotEmpty
     @JoinTable(name = "donation_categories")
     private List<Category> categories = new ArrayList<>();
+    @NotNull
     @ManyToOne
     private Institution institution;
+    @NotNull
     private String street;
+    @NotNull
     private String city;
+    @NotNull
     private String zipCode;
+    @NotNull
     @DateTimeFormat(pattern = "dd-MM-YYYY")
     private LocalDate pickUpDate;
+    @NotNull
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime pickUpTime;
+    @NotNull
     private String pickUpComment;
+    @NotNull
 
     public Long getId() {
         return id;
