@@ -47,6 +47,6 @@
 
 <jsp:include page="footer.jsp"/>
 
-<script src="../../../../../PortfolioLab_HTML_Layout-simple/PortfolioLab_HTML_Layout-master/js/app.js"></script>
+<script src="../../resources/css/style.css"></script>
 </body>
 </html>

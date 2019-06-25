@@ -35,14 +35,15 @@ public class Donation {
     @NotNull
     private String zipCode;
     @NotNull
-    @DateTimeFormat(pattern = "dd-MM-YYYY")
+    private String phoneNumber;
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     @NotNull
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime pickUpTime;
     @NotNull
     private String pickUpComment;
-    @NotNull
 
     public Long getId() {
         return id;
@@ -98,6 +99,14 @@ public class Donation {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public LocalDate getPickUpDate() {

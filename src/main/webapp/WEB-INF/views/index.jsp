@@ -111,7 +111,7 @@
 
         <ul class="help--slides-items">
             <c:forEach items="${institutions}" var="institution" varStatus="theCount">
-                <c:if test="${theCount.last}">
+                <c:if test="${theCount.last && theCount.count % 2 != 0}">
                     <li>
                         <div class="col">
                             <div class="title">Fundacja "${institution.name}"</div>
