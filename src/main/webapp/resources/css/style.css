@@ -1458,7 +1458,7 @@ header nav ul li:last-of-type {
 }
 
 /* line 72, scss/modules/homepage-sections/_help.scss */
-.help--slides-items .col:last-child:after {
+.help--slides-items .help--slides-itemscol:last-child:after {
   float: right;
 }
 
