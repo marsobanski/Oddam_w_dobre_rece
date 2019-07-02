@@ -184,18 +184,18 @@
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto <form:input path="city" type="text"/> </label>
+                            <label> Miasto <form:input id="city-input" path="city" type="text"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <form:input path="zipCode" type="text"/>
+                                Kod pocztowy <form:input id="zip-code-input" path="zipCode" type="text"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <form:input path="phoneNumber" type="phone" name="phone"/>
+                                Numer telefonu <form:input id="telephone-input" path="phoneNumber" type="phone" name="phone"/>
                             </label>
                         </div>
                     </div>
@@ -203,17 +203,17 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input path="pickUpDate" type="date"/> </label>
+                            <label> Data <form:input id="date-input" path="pickUpDate" type="date"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <form:input path="pickUpTime" type="time" name="time"/> </label>
+                            <label> Godzina <form:input id="time-input" path="pickUpTime" type="time" name="time"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <form:textarea path="pickUpComment" rows="5"></form:textarea>
+                                <form:textarea id="comment-input" path="pickUpComment" rows="5"></form:textarea>
                             </label>
                         </div>
                     </div>
@@ -252,18 +252,18 @@
                             <h4>Adres odbioru:</h4>
                             <ul>
                                 <li id="street-sum"></li>
-                                <li id="city-sum">Warszawa</li>
-                                <li id="zip-code">99-098</li>
-                                <li id="telephone">123 456 789</li>
+                                <li id="city-sum"></li>
+                                <li id="zip-code-sum"></li>
+                                <li id="telephone-sum"></li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li id="date">13/12/2018</li>
-                                <li id="time">15:40</li>
-                                <li id="comment">Brak uwag</li>
+                                <li id="date-sum"></li>
+                                <li id="time-sum"></li>
+                                <li id="comment-sum"></li>
                             </ul>
                         </div>
                     </div>

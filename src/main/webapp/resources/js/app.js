@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var zipCode = ""
   var telepfone = ""
   var date = ""
-  var type = ""
+  var time = ""
   var comment = ""
 
   // Inputy
@@ -249,5 +249,52 @@ document.addEventListener("DOMContentLoaded", function() {
     street = street_input.val()
     street_sum.html(street)
     console.log(street)
+  })
+
+  $("#city-input").on("change", function () {
+    city = $("#city-input").val()
+    $("#city-sum").html(city)
+    console.log(city)
+  })
+
+  $("#zip-code-input").on("change", function () {
+    zipCode = $("#zip-code-input").val()
+    $("#zip-code-sum").html(zipCode)
+    console.log(zipCode)
+  })
+
+  $("#telephone-input").on("change", function () {
+    telepfone = $("#telephone-input").val()
+    $("#telephone-sum").html(telepfone)
+    console.log(telepfone)
+  })
+
+  $("#city-input").on("change", function () {
+    city = $("#city-input").val()
+    $("#city-sum").html(city)
+    console.log(city)
+  })
+
+  $("#date-input").on("change", function () {
+    date = $("#date-input").val()
+    $("#date-sum").html(date)
+    console.log(date)
+  })
+
+  $("#time-input").on("change", function () {
+    time = $("#time-input").val()
+    $("#time-sum").html(time)
+    console.log(time)
+  })
+
+  $("#comment-input").on("change", function () {
+    if ($("#comment-input").val() == "") {
+      $("#comment-sum").html("Brak uwag")
+      console.log("Brak uwag")
+    } else {
+      comment = $("#comment-input").val()
+      $("#comment-sum").html(comment)
+      console.log(comment)
+    }
   })
 });
