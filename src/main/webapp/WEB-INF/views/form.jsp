@@ -101,11 +101,12 @@
                     <div class="form-group form-group--checkbox">
                         <label>
                             <form:checkbox
+                                    cssClass="cat-input"
                                     path="categories"
                                     value="${category}"
                             />
                             <span class="checkbox"></span>
-                            <span class="description"
+                            <span class="description cat-name"
                             >${category.name}</span
                             >
                         </label>
@@ -126,7 +127,7 @@
                 </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="cat-btn" type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -137,28 +138,28 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <form:input type="number" path="quantity" min="1" step="1"/>
+                        <form:input id="bag-input" type="number" path="quantity" min="1" step="1"/>
                     </label>
                 </div>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="bag-btn" type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
 
             <!-- STEP 4 -->
             <div data-step="3">
-                <h3>Wybierz organizacje, której chcesz pomóc:</h3>
+                <h3>Wybierz organizację, której chcesz pomóc:</h3>
 
                 <c:forEach items="${institutions}" var="institution">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:radiobutton path="institution" value="${institution}"/>
+                            <form:radiobutton cssClass="inst-input" path="institution" value="${institution}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
-                  <div class="title">${institution.name}”</div>
+                  <div class="inst-name" class="title">${institution.name}</div>
                   <div class="subtitle">${institution.description}</div>
                         </span>
                         </label>
@@ -179,7 +180,7 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input path="street" type="text"/> </label>
+                            <label> Ulica <form:input id="street-input" path="street" type="text"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -233,15 +234,14 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span id="bag-cat-summary" class="summary--text"
+                                ></span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
+                                <span id="inst-sum" class="summary--text"
+                                ></span
                                 >
                             </li>
                         </ul>
@@ -251,19 +251,19 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
                             <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li id="street-sum"></li>
+                                <li id="city-sum">Warszawa</li>
+                                <li id="zip-code">99-098</li>
+                                <li id="telephone">123 456 789</li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li id="date">13/12/2018</li>
+                                <li id="time">15:40</li>
+                                <li id="comment">Brak uwag</li>
                             </ul>
                         </div>
                     </div>
@@ -280,6 +280,7 @@
 
 <jsp:include page="footer.jsp"/>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../../resources/js/app.js"></script>
 </body>
 </html>

@@ -171,4 +171,83 @@ document.addEventListener("DOMContentLoaded", function() {
   if (form !== null) {
     new FormSteps(form);
   }
+  // Wartości
+  var numberOfBags = ""
+  var institution = ""
+  var street = ""
+  var city = ""
+  var zipCode = ""
+  var telepfone = ""
+  var date = ""
+  var type = ""
+  var comment = ""
+
+  // Inputy
+  var categories_input = $(".cat-input");
+  var inst_input = $(".inst-input")
+  var bag_input = $("#bag-input")
+  var street_input = $("#street-input")
+
+  // Podsumowanie
+  var bag_cat_summary = $("#bag-cat-summary");
+  var inst_sum = $("#inst-sum")
+  var street_sum = $("#street-sum")
+
+  // Buttony
+  var cat_btn = $("#cat-btn")
+  var bag_btn = $("#bag-btn")
+
+  //Nazwy
+  var cat_names = $(".cat-name")
+  var inst_name = $(".inst-name")
+
+  bag_input.on("change", function () {
+    numberOfBags = "Liczba worków: " + bag_input.val() + "<br><br>"
+    console.log(bag_input.val());
+    console.log(numberOfBags)
+  });
+
+
+
+  categories_input.on("click", function () {
+    for (var i = 0; i < categories_input.length; i++) {
+      if (categories_input[i].checked == 1) {
+        console.log(cat_names[i].innerText)
+      }
+      else {
+        console.log(i + "unchecked")
+      }
+    }
+  });
+
+  cat_btn.on("click", function () {
+    bag_cat_summary.html("Rodzaje darowizny: <br>")
+    for (var i = 0; i < categories_input.length; i++) {
+      if (categories_input[i].checked) {
+        bag_cat_summary.append(cat_names[i].innerText + "<br>")
+      }
+    }
+
+  })
+
+  bag_btn.on("click", function () {
+    bag_cat_summary.prepend(numberOfBags)
+  })
+
+  inst_input.on("click", function () {
+    for (var i = 0; i < inst_input.length; i++) {
+      if (inst_input[i].checked) {
+        institution = inst_name[i].innerText
+        console.log(institution)
+        inst_sum.html("Dla fundacji " + institution)
+      }
+    }
+  })
+
+  street_input.on("change", function () {
+    console.log("test")
+    street = street_input.val()
+    street_sum.html(street)
+    console.log(street)
+  })
 });
