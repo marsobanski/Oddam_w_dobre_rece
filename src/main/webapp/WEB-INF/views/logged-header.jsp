@@ -1,12 +1,18 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav class="container container--70">
     <ul class="nav--actions">
         <li class="logged-user">
-            Witaj Agata
+            ${currentUser.username}
             <ul class="dropdown">
                 <li><a href="#">Profil</a></li>
                 <li><a href="#">Ustawienia</a></li>
                 <li><a href="#">Moje zbiórki</a></li>
-                <li><a href="#">Wyloguj</a></li>
+                <li><a href="<c:url value="/logout"/>" methods="post">Logout</a></li>
+                <form action="<c:url value="/logout"/>" method="post">
+                    <input class="fa fa-id-badge" type="submit" value="Wyloguj">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                </form>
             </ul>
         </li>
     </ul>

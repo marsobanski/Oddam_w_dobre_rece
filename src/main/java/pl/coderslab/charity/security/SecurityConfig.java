@@ -17,11 +17,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-//                .antMatchers("/").permitAll()
-//                .antMatchers("/donation").hasAnyRole("ADMIN", "USER")
-                .anyRequest().permitAll()
-                .and().formLogin()
-                .loginPage("/login");
+                .antMatchers("/").permitAll()
+                .antMatchers("/donation").hasAnyRole("ADMIN", "USER")
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .defaultSuccessUrl("/donation", true)
+                .and().logout().logoutSuccessUrl("/login");
     }
 
     @Bean

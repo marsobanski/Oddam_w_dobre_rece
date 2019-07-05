@@ -18,27 +18,7 @@
 </head>
 <body>
 <header class="header--form-page">
-    <nav class="container container--70">
-        <ul class="nav--actions">
-            <li class="logged-user">
-                Witaj Agata
-                <ul class="dropdown">
-                    <li><a href="#">Profil</a></li>
-                    <li><a href="#">Ustawienia</a></li>
-                    <li><a href="#">Moje zbiórki</a></li>
-                    <li><a href="#">Wyloguj</a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <ul>
-            <li><a href="index.html" class="btn btn--without-border active">Start</a></li>
-            <li><a href="index.html#steps" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="index.html#about-us" class="btn btn--without-border">O nas</a></li>
-            <li><a href="index.html#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
-        </ul>
-    </nav>
+    <jsp:include page="logged-header.jsp"/>
 
     <div class="slogan container container--90">
         <div class="slogan--item">
@@ -97,21 +77,15 @@
                 <h3>Zaznacz co chcesz oddać:</h3>
 
                 <c:forEach items="${categories}" var="category">
-
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:checkbox
-                                    cssClass="cat-input"
-                                    path="categories"
-                                    value="${category}"
-                            />
+                            <input class="cat-input" type="checkbox" name="categories" value="${category.id}"/>
                             <span class="checkbox"></span>
-                            <span class="description cat-name"
-                            >${category.name}</span
-                            >
+                            <span class="description cat-name">${category.name}</span>
                         </label>
                     </div>
                 </c:forEach>
+
                 <div class="form-group form-group--checkbox">
                     <label>
                         <input

@@ -1,8 +1,10 @@
 package pl.coderslab.charity.user;
 
+import org.springframework.security.core.GrantedAuthority;
 import pl.coderslab.charity.role.Role;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
