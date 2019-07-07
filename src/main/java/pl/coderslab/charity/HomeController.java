@@ -52,4 +52,14 @@ public class HomeController {
         userService.saveUser(user);
         return "redirect:/login";
     }
+
+    @RequestMapping("/logout")
+    public String logout() {
+        return "logout";
+    }
+
+    @RequestMapping("/admin")
+    public String adminLogin() {
+        return "admin-home";
+    }
 }

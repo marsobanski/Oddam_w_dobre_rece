@@ -8,11 +8,7 @@
                 <li><a href="#">Profil</a></li>
                 <li><a href="#">Ustawienia</a></li>
                 <li><a href="#">Moje zbiórki</a></li>
-                <li><a href="<c:url value="/logout"/>" methods="post">Logout</a></li>
-                <form action="<c:url value="/logout"/>" method="post">
-                    <input class="fa fa-id-badge" type="submit" value="Wyloguj">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                </form>
+                <li><a href="/logout">Wyloguj</a></li>
             </ul>
         </li>
     </ul>
